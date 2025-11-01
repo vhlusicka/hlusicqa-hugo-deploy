@@ -1,0 +1,7 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - hlusicQA</title>
+        <link>http://hlusicqa.me/posts/</link>
+        <description>All Posts | hlusicQA</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 28 Oct 2025 22:48:08 &#43;0100</lastBuildDate><atom:link href="http://hlusicqa.me/posts/" rel="self" type="application/rss+xml" /></channel>
+</rss>
