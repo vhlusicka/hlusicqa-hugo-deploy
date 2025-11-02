@@ -7,7 +7,7 @@
     <title>Tag Your Tests: Object/Action FTW</title>
     <link>http://hlusicqa.me/posts/tag-your-tests/</link>
     <pubDate>Sat, 01 Nov 2025 12:00:00 &#43;0100</pubDate>
-    <author>Vilim Hlusicka</author>
+    <author>Vilim Hlušička</author>
     <guid>http://hlusicqa.me/posts/tag-your-tests/</guid>
     <description><![CDATA[<p>Sometimes the simplest additions make the biggest difference. While working on test specifications, I realized that many test cases describe <em>what</em> happens, but not <em>where</em> it happens. To fix that, I started adding a small column - or a quick tag - that turned out to be a subtle but powerful way to bring structure and instant clarity to my test documentation.</p>
 <p>I’m the author of test specifications for a few products, one of which I’m continuously maintaining, and I’m currently designing another one for a product still in development. During both designing and maintaining, I faced a challenge that might seem trivial at first… until it starts to get on your nerves. You might find yourself in this situation too, so lean in and try to visualize it.</p>]]></description>
