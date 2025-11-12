@@ -106,7 +106,7 @@ git add .
 
 git commit -m "Deploy <todays date>"
 
-git push main gh-pages
+git push origin gh-pages [--force]
 ```
 
 After that the latest version of Hugo page is available on GitHub Pages.
