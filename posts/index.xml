@@ -12,5 +12,14 @@
     <description><![CDATA[<p>I can&rsquo;t forget the words my colleague gave me when I was just taking my first baby steps as a QA, and it was a great QA-related piece of advice: <strong>&ldquo;Never assume anything.&rdquo;</strong> I can assure you that the more time progresses, the more this makes sense.</p>
 <p>Today&rsquo;s IT systems we work with are more complicated than ever before, and we need to be completely sure of the outcome of any part of the system that we are either testing, exploring, or developing. If we are not sure about the expected behavior, there is always a specification or some other type of documentation that is supposed to clarify the enigma. If there is no specification and the documentation is lacking, we can always check with the project manager, product owner, developer, or anyone who is familiar with the system.</p>]]></description>
 </item>
+<item>
+    <title>Tag Your Tests: Object/Action FTW</title>
+    <link>http://hlusicqa.me/posts/tag-your-tests/</link>
+    <pubDate>Sat, 01 Nov 2025 12:00:00 &#43;0100</pubDate>
+    <author>Vilim Hlušička</author>
+    <guid>http://hlusicqa.me/posts/tag-your-tests/</guid>
+    <description><![CDATA[<p>Sometimes the simplest additions make the biggest difference. While working on test specifications, I realized that many test cases describe <em>what</em> happens, but not <em>where</em> it happens. To fix that, I started adding a small column - or a quick tag - that turned out to be a subtle but powerful way to bring structure and instant clarity to my test documentation.</p>
+<p>I’m the author of test specifications for a few products, one of which I’m continuously maintaining, and I’m currently designing another one for a product still in development. During both designing and maintaining, I faced a challenge that might seem trivial at first… until it starts to get on your nerves. You might find yourself in this situation too, so lean in and try to visualize it.</p>]]></description>
+</item>
 </channel>
 </rss>
