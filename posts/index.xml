@@ -3,7 +3,20 @@
         <title>All Posts - hlusicQA</title>
         <link>http://hlusicqa.me/posts/</link>
         <description>All Posts | hlusicQA</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 15 Dec 2025 12:00:00 &#43;0100</lastBuildDate><atom:link href="http://hlusicqa.me/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Mar 2026 19:00:00 &#43;0100</lastBuildDate><atom:link href="http://hlusicqa.me/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Tests in Order, Please</title>
+    <link>http://hlusicqa.me/posts/tests-in-order-please/</link>
+    <pubDate>Mon, 02 Mar 2026 19:00:00 &#43;0100</pubDate>
+    <author>Vilim Hlušička</author>
+    <guid>http://hlusicqa.me/posts/tests-in-order-please/</guid>
+    <description><![CDATA[<p>Should test case IDs reflect execution order at all? If yes, here is the pain and my solution. If no, here is the alternative philosophy.</p>
+<p>At some point I probably mentioned that most of the things I write on this blog came from my personal experience.
+It might be some interesting discovery I made, an advice I want to share, or question I want to clarify. This time
+I want to share one of (workaround) solutions I made, but I&rsquo;m also raising a question in order to cope with this challenge
+more efficient in the future. This might also help other QA colleagues who will enroll on new projects and want to be as
+prepared as possible.</p>]]></description>
+</item>
+<item>
     <title>Gimme Gimme Gimme more Assertions</title>
     <link>http://hlusicqa.me/posts/gimme-gimme-gimme-more-assertions/</link>
     <pubDate>Mon, 15 Dec 2025 12:00:00 &#43;0100</pubDate>

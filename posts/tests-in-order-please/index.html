@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Tests in Order, Please - hlusicQA</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="http://hlusicqa.me/posts/tests-in-order-please/">
+  <meta property="og:site_name" content="hlusicQA">
+  <meta property="og:title" content="Tests in Order, Please">
+  <meta property="og:description" content="Should test case IDs reflect execution order at all? If yes, here is the pain and my solution. If no, here is the alternative philosophy.
+At some point I probably mentioned that most of the things I write on this blog came from my personal experience. It might be some interesting discovery I made, an advice I want to share, or question I want to clarify. This time I want to share one of (workaround) solutions I made, but I’m also raising a question in order to cope with this challenge more efficient in the future. This might also help other QA colleagues who will enroll on new projects and want to be as prepared as possible.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-02T19:00:00+01:00">
+    <meta property="article:modified_time" content="2026-03-02T19:00:00+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tests in Order, Please">
+  <meta name="twitter:description" content="Should test case IDs reflect execution order at all? If yes, here is the pain and my solution. If no, here is the alternative philosophy.
+At some point I probably mentioned that most of the things I write on this blog came from my personal experience. It might be some interesting discovery I made, an advice I want to share, or question I want to clarify. This time I want to share one of (workaround) solutions I made, but I’m also raising a question in order to cope with this challenge more efficient in the future. This might also help other QA colleagues who will enroll on new projects and want to be as prepared as possible.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hlusicqa.me/posts/tests-in-order-please/" /><link rel="prev" href="http://hlusicqa.me/posts/gimme-gimme-gimme-more-assertions/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Tests in Order, Please",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/hlusicqa.me\/posts\/tests-in-order-please\/"
+        },"genre": "posts","wordcount":  1110 ,
+        "url": "http:\/\/hlusicqa.me\/posts\/tests-in-order-please\/","datePublished": "2026-03-02T19:00:00+01:00","dateModified": "2026-03-02T19:00:00+01:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Vilim Hlušička"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="hlusicQA"><span>hlusicQA</span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/" > Posts </a><a class="menu-item"
+                    href="/about/" > About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="hlusicQA">hlusicQA</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" >Posts</a><a class="menu-item" href="/about/" title="" >About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tests in Order, Please</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vilim Hlušička</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-03-02">2026-03-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1110 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>Should test case IDs reflect execution order at all? If yes, here is the pain and my solution. If no, here is the alternative philosophy.</p>
+<p>At some point I probably mentioned that most of the things I write on this blog came from my personal experience.
+It might be some interesting discovery I made, an advice I want to share, or question I want to clarify. This time
+I want to share one of (workaround) solutions I made, but I&rsquo;m also raising a question in order to cope with this challenge
+more efficient in the future. This might also help other QA colleagues who will enroll on new projects and want to be as
+prepared as possible.</p>
+<p>Attributes used to define the test cases in test specifications are very similar no matter what kind of project or testing is being performed.
+Some basic attributes would be:</p>
+<ul>
+<li>Test case ID</li>
+<li>Test case title</li>
+<li>Steps to reproduce</li>
+<li>Expected result</li>
+<li>Actual result</li>
+</ul>
+<p>Attributes can be added or removed, depending on what we need. Even some more custom attributes, which might contribute to our tests, might be added.</p>
+<blockquote>
+<p>Regarding some additional attributes, read my first post about <a href="https://hlusicqa.me/posts/tag-your-tests/" target="_blank" rel="noopener noreffer ">object/action</a> attribute.</p></blockquote>
+<p>Most of these are self-explanatory, so I won&rsquo;t be describing them and their purpose, but I will take this opportunity to discuss the use, benefit and potential challenges of <code>test case ID</code>, and I will be raising a question, as already mentioned.
+<code>Test case ID</code> is used to distinguish each test case and it goes hand in hand with <code>test case title</code>. It has a unique value, and while <code>test case title</code> is used to describe the meaning of test case so humans can understand it, <code>test case ID</code> is a string which is used strongly to define the identity of test case.
+Just as we have our first and last name we also have some personal identifier number issued to us by the government. Patterns for defining a <code>test case ID</code> can vary depending on how the author of test specification wants to structure it, but some (pretty much) universal way I like to do it is something like this: <code>HG-03-008</code>. Let&rsquo;s define it a bit better:</p>
+<ul>
+<li><code>HG</code> - Name of the project under test, in this case name of the project is Hugo.</li>
+<li><code>03</code> - Label of scenario, ranging from 01 up to 99, with assumption we won&rsquo;t need more than 99 test scenarios.</li>
+<li><code>008</code> - Label of test case, ranging from 001 up to 999, with assumption we won&rsquo;t have more than 999 test cases per scenario.</li>
+</ul>
+<p>First test case in the whole test specification would have an ID <code>HG-01-001</code>, second one would be <code>HG-01-002</code>, and so on. You may have noticed I am trying to keep the ID follow some order of test cases, or to be more specific - order of executing the test cases. I intentionally use IDs as execution-order markers, as it it easier to navigate by them. Creating test cases from scratch is very straightforward and I do not expect for problems to arise at that moment. But here is the challenge I wanted to address, and believe me, it gave me more headache and ate more precious time than I could expect.</p>
+<blockquote>
+<p>Imagine the situation where you already have the whole test specification defined, including all the UI E2E tests which are executing in Cypress.</p>
+<p>A minor change in one of features is made and you decided to cover that with an additional test case.</p>
+<p>Test scenario already has 60 test cases, and new test case would be 5th in order.</p></blockquote>
+<p>Since I am writing this article as my own experience, I will take in consideration that test specification is written in some tool/platform which easily handles changes of IDs, and in my <strong>current</strong> situation this is Excel. Test case management tools such as Testmo or Testrail support usage of generic sequence IDs or even some custom fields which can be used as your own custom IDs, but I will explore how these tools handle ID changes in future post, in case you add some new test case in the middle of scenario. I will give you my insight when I confirm the behavior of this feature.</p>
+<p>But incrementing all these test cases in code of your automation tests might become a bit of pain in the ***. Adding or removing one test requires some time to manually adjust all <code>test case IDs</code>, depending on the amount of tests cases you need to adjust. But adding few test cases in one spot, changing few in other, removing couple in third place - now you would need to concentrate hard and lose some time just to do one thing - update the IDs. When you also consider the possibility to make a mistake while updating the IDs, the frustration just gets heavier.</p>
+<p>So, as announced earlier, here comes my question(s) and my (workaround) solution;</p>
+<blockquote>
+<p>How do you cope with this issue?</p>
+<p>How do you update the IDs in your automation code?</p>
+<p>Are you using some GUID instead of a sequence IDs?</p>
+<p>Are you laughing at this because it is a minor issue to you?</p>
+<p>If you are laughing at this because it is a minor issue to you, what is the allmighty solution you are using?</p></blockquote>
+<p>One could argue that test case IDs should be immutable and should not reflect execution order at all. In that case, adding a new test would not require renumbering anything. However, in my approach, I intentionally use IDs to reflect structure and execution order, which introduces this challenge.</p>
+<p>After some significant time of manually updating the <code>test case IDs</code> in my automation code, I wrote a script to check all of the test cases in my automation code, compare it with test cases in my test specification, and update the IDs according to the test specification. It basically does the following algorithm:</p>
+<blockquote>
+<p>Fetch <code>test case Title</code> in automation code
+Search for the test case with the matching <code>test case Title</code> in test specification and copy the <code>test case ID</code>
+Update the copied <code>test case ID</code> in automation code</p></blockquote>
+<p>As a reference, I need to attach my test specification to the script. In current case I am using Excel as my test case management tool. Also, here is another question I am curious about:</p>
+<blockquote>
+<p>How would you use this script if test cases are located in some test case management tool such as Xray, Testrail or Testmo.</p></blockquote>
+<p>Up until my next post, keep testing and be tenacious! Also, feel free to ask me anything, or comment if you have some ideas to share. I&rsquo;ll have to install some comment component here :)</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2026-03-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://hlusicqa.me/posts/tests-in-order-please/" data-title="Tests in Order, Please"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://hlusicqa.me/posts/tests-in-order-please/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://hlusicqa.me/posts/tests-in-order-please/" data-title="Tests in Order, Please"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://hlusicqa.me/posts/tests-in-order-please/" data-title="Tests in Order, Please"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://hlusicqa.me/posts/tests-in-order-please/" data-title="Tests in Order, Please"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/gimme-gimme-gimme-more-assertions/" class="prev" rel="prev" title="Gimme Gimme Gimme more Assertions"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Gimme Gimme Gimme more Assertions</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.151.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Vilim Hlušička</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
