@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Click Run, Skip Thinking - hlusicQA</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="http://hlusicqa.me/posts/click-run-skip-thinking/">
+  <meta property="og:site_name" content="hlusicQA">
+  <meta property="og:title" content="Click Run, Skip Thinking">
+  <meta property="og:description" content="In my previous articles I covered some knowledge and tricks that I’m using. This time I’ll be sharing an experience I learned the hard way. It sounds a bit dramatic, but it is not - it’s just something to keep in mind so you don’t fall into a trap you set yourself.
+Whenever I began working with some project that is unknown to me I always started with exploratory testing. Exploratory testing in combination with some product manuals or product specification is the best way to learn dark corners and hidden behaviors of the product. No matter how much the product has been tested previously (by someone else), this way of familiarizing yourself with the product hugely increases chances to reveal some inconsistencies and bugs.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-04-26T18:14:00+01:00">
+    <meta property="article:modified_time" content="2026-04-26T18:14:00+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Click Run, Skip Thinking">
+  <meta name="twitter:description" content="In my previous articles I covered some knowledge and tricks that I’m using. This time I’ll be sharing an experience I learned the hard way. It sounds a bit dramatic, but it is not - it’s just something to keep in mind so you don’t fall into a trap you set yourself.
+Whenever I began working with some project that is unknown to me I always started with exploratory testing. Exploratory testing in combination with some product manuals or product specification is the best way to learn dark corners and hidden behaviors of the product. No matter how much the product has been tested previously (by someone else), this way of familiarizing yourself with the product hugely increases chances to reveal some inconsistencies and bugs.">
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hlusicqa.me/posts/click-run-skip-thinking/" /><link rel="prev" href="http://hlusicqa.me/posts/tests-in-order-please/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Click Run, Skip Thinking",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/hlusicqa.me\/posts\/click-run-skip-thinking\/"
+        },"genre": "posts","wordcount":  779 ,
+        "url": "http:\/\/hlusicqa.me\/posts\/click-run-skip-thinking\/","datePublished": "2026-04-26T18:14:00+01:00","dateModified": "2026-04-26T18:14:00+01:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Vilim Hlušička"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="hlusicQA"><span>hlusicQA</span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/" > Posts </a><a class="menu-item"
+                    href="/about/" > About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="hlusicQA">hlusicQA</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" >Posts</a><a class="menu-item" href="/about/" title="" >About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Click Run, Skip Thinking</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vilim Hlušička</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2026-04-26">2026-04-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;779 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>In my previous articles I covered some knowledge and tricks that I&rsquo;m using. This time I&rsquo;ll be sharing an experience I learned the hard way. It sounds a bit dramatic, but it is not - it&rsquo;s just something to keep in mind so you don&rsquo;t fall into a trap you set yourself.</p>
+<p>Whenever I began working with some project that is unknown to me I always started with exploratory testing. Exploratory testing in combination with some product manuals or product specification is the best way to learn dark corners and hidden behaviors of the product. No matter how much the product has been tested previously (by someone else), this way of familiarizing yourself with the product hugely increases chances to reveal some inconsistencies and bugs.</p>
+<p>By the time you&rsquo;ve done an exploratory testing, wrote most of the test specification and started developing test automation, you feel like the king of the product - you know every piece of it, every feature, every component, every highlight and every flaw. This is a special kind of feeling, I must admit, because developers respect your opinion, support relies on your feedback, and your superiors are much more confident about product reliability.</p>
+<p>This is the point where, by the SDLC standards, product maintenance &lsquo;kicks in&rsquo; and in most scenarios the QA&rsquo;s responsibility onward is supervising the automation tests and maintaining them, especially if they are running as a part of CI/CD. Basically you just take a look at the outcome of the tests and if everything is green you just continue with your other tasks.</p>
+<p>I really like to use the following saying, so here it is - <strong>And here comes</strong> the highlight of this article: you start forgetting the product. Without the need to constantly or periodically browse and explore through the product, you just start forgetting it. Even knowledge of basic features and actions of the product, which you were very familiar with, start to fade. This is also the point where your product starts losing reliability, because you no longer recognize every change made to the product. I am aware that some of you might argue about that part where product loses reliability after introducing the testing automation, because test automation is supposed to increase the reliability of the product, right? It is, but not by completely eliminating manual testing, exploratory testing, and overall human interaction with the product during the regression testing. Testing automation is just a leverage to help you with maintaining the product, including all other types of testing. Getting a car with all the modern safety features won&rsquo;t make you any safer if you decide to start driving with your eyes closed.</p>
+<blockquote>
+<p>Some signs that you are sliping into &ldquo;Click run, skip thinking&rdquo; sindrom are:</p>
+<ul>
+<li>You trust green pipelines without questioning what’s actually covered</li>
+<li>You struggle to explain a feature without opening the app</li>
+<li>Bugs reported by users feel “surprising” instead of “missed”</li>
+<li>You rarely open the product outside debugging automation failures</li>
+</ul></blockquote>
+<p>Now that we’ve identified the problem, the solution is straightforward - but it requires discipline. Do the manual regression testing once in a while, no matter how detailed coverage of the test automation is. Manually cover both tests that are a part of test automation and the ones that are not, especially some edge cases. Edge cases not only cover the &rsquo;edge&rsquo; scenarios, but might also lead to discovering an issues that also affect other parts of the system. A practical way to approach this is by introducing small rituals:</p>
+<ul>
+<li>Weekly 30 minutes exploratory sessions</li>
+<li>Manual smoke run on a release day</li>
+<li>Monthly &ldquo;break the product&rdquo; session focusing only on edge cases</li>
+</ul>
+<p>Test specification is also a nice way of keeping the knowledge of product up to date. By reviewing and updating the test specification you are keeping the knowledge of product in good shape. Just keep in mind not to duplicate the test cases, as quantity doesn&rsquo;t necessaryly guarantee quality.</p>
+<blockquote>
+<p>Reviewing test specification for duplicate test cases is fantastic example of use case for AI - just feed the AI with test specifications and ask it to check for duplicates and it might also check for gaps in coverage or highlight tests that validate the same behavior in slightly different ways.</p></blockquote>
+<p>I learned this the hard way on one project where everything looked stable - pipelines were green for weeks. A small UI change broke a core user flow, but automation didn’t catch it. I didn’t either, because I hadn’t actually used that part of the product in a long time.</p>
+<p>Automation should support your thinking, not replace it. Because the moment you only click &ldquo;Run&rdquo;, you&rsquo;ve already skipped the most important part.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2026-04-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://hlusicqa.me/posts/click-run-skip-thinking/" data-title="Click Run, Skip Thinking"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://hlusicqa.me/posts/click-run-skip-thinking/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://hlusicqa.me/posts/click-run-skip-thinking/" data-title="Click Run, Skip Thinking"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://hlusicqa.me/posts/click-run-skip-thinking/" data-title="Click Run, Skip Thinking"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://hlusicqa.me/posts/click-run-skip-thinking/" data-title="Click Run, Skip Thinking"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/tests-in-order-please/" class="prev" rel="prev" title="Tests in Order, Please"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Tests in Order, Please</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.151.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Vilim Hlušička</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

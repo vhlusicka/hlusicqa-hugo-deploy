@@ -2,8 +2,9 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://hlusicqa.me/</loc><lastmod>2026-03-02T19:00:00&#43;01:00</lastmod></url><url>
-            <loc>http://hlusicqa.me/posts/</loc><lastmod>2026-03-02T19:00:00&#43;01:00</lastmod></url><url>
+            <loc>http://hlusicqa.me/posts/click-run-skip-thinking/</loc><lastmod>2026-04-26T18:14:00&#43;01:00</lastmod></url><url>
+            <loc>http://hlusicqa.me/</loc><lastmod>2026-04-26T18:14:00&#43;01:00</lastmod></url><url>
+            <loc>http://hlusicqa.me/posts/</loc><lastmod>2026-04-26T18:14:00&#43;01:00</lastmod></url><url>
             <loc>http://hlusicqa.me/posts/tests-in-order-please/</loc><lastmod>2026-03-02T19:00:00&#43;01:00</lastmod></url><url>
             <loc>http://hlusicqa.me/posts/gimme-gimme-gimme-more-assertions/</loc><lastmod>2025-12-15T12:00:00&#43;01:00</lastmod></url><url>
             <loc>http://hlusicqa.me/posts/tag-your-tests/</loc><lastmod>2025-11-01T12:00:00&#43;01:00</lastmod></url><url>

@@ -3,7 +3,16 @@
         <title>All Posts - hlusicQA</title>
         <link>http://hlusicqa.me/posts/</link>
         <description>All Posts | hlusicQA</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 02 Mar 2026 19:00:00 &#43;0100</lastBuildDate><atom:link href="http://hlusicqa.me/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 26 Apr 2026 18:14:00 &#43;0100</lastBuildDate><atom:link href="http://hlusicqa.me/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Click Run, Skip Thinking</title>
+    <link>http://hlusicqa.me/posts/click-run-skip-thinking/</link>
+    <pubDate>Sun, 26 Apr 2026 18:14:00 &#43;0100</pubDate>
+    <author>Vilim Hlušička</author>
+    <guid>http://hlusicqa.me/posts/click-run-skip-thinking/</guid>
+    <description><![CDATA[<p>In my previous articles I covered some knowledge and tricks that I&rsquo;m using. This time I&rsquo;ll be sharing an experience I learned the hard way. It sounds a bit dramatic, but it is not - it&rsquo;s just something to keep in mind so you don&rsquo;t fall into a trap you set yourself.</p>
+<p>Whenever I began working with some project that is unknown to me I always started with exploratory testing. Exploratory testing in combination with some product manuals or product specification is the best way to learn dark corners and hidden behaviors of the product. No matter how much the product has been tested previously (by someone else), this way of familiarizing yourself with the product hugely increases chances to reveal some inconsistencies and bugs.</p>]]></description>
+</item>
+<item>
     <title>Tests in Order, Please</title>
     <link>http://hlusicqa.me/posts/tests-in-order-please/</link>
     <pubDate>Mon, 02 Mar 2026 19:00:00 &#43;0100</pubDate>
